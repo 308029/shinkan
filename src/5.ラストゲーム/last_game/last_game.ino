@@ -130,15 +130,14 @@ int lastm = 0;
 int pushwaittime = 0;
 
 void loop() {
-  if(digitalRead(BUTTON)) gamemode = !gamemode;
+  if(digitalRead(BUTTON) && !gamemode) gamemode = true;
 
   if(gamemode) {
     if(millis()-lastm>1000){
       display_segments(counter --);
       lastm = millis();
      }
-    if (counter == 0){
-      counter = 5;
+    if (counter == -1){
       pushwaittime = millis();
       pushwait = true;
     }

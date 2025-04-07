@@ -8,7 +8,7 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  if(digitalRead(BUTTON) {
+  if(digitalRead(BUTTON)) {
     digitalWrite(LED,HIGH);
   } else {
     digitalWrite(LED,LOW);
